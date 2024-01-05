@@ -1,0 +1,13 @@
+drop table guestreply;
+create table guestreply(
+	replyNumber int auto_increment primary key,
+    replyId varchar(255),
+    replyContent varchar(255),
+    replyWdate varchar(255),
+    replyCode int,
+    foreign key (replyId) references login(userId) on update cascade on delete
+    restrict,
+    foreign key (replyCode) references guest(guestNumber) on update cascade on delete
+    restrict
+);
+select * from guestreply;

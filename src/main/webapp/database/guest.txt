@@ -1,0 +1,14 @@
+drop table guest ;
+create table guest (
+	guestNumber int auto_increment primary key,
+	guestId varchar(255),
+    guestName varchar(255),
+    guestTitle varchar(255),
+    guestContent varchar(255),
+    guestWdate varchar(255),
+    guestHit int default 0,
+    guestImgFile varchar(255),
+    foreign key (guestId) references login(userId) on update cascade on delete
+    restrict
+);
+select * from guest;
